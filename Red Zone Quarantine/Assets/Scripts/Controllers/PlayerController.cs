@@ -5,6 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
+    public Rigidbody2D rb;
+
+    private Vector2 currPos;
+
+    private void Awake()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
@@ -13,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
+        //rb.velocity = new Vector2(currPos.x, currPos.y);
+
         if(Input.GetKey("up") || Input.GetKey(KeyCode.W))
         {
             transform.Translate(0, walkSpeed * Time.deltaTime, 0);
@@ -32,5 +42,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(-walkSpeed * Time.deltaTime, 0, 0);
         }
+
+        currPos = new Vector2(this.transform.position.x, this.transform.position.y);
     }
 }
