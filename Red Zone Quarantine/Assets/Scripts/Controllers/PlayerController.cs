@@ -23,26 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         //rb.velocity = new Vector2(currPos.x, currPos.y);
 
-        if(Input.GetKey("up") || Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(0, walkSpeed * Time.deltaTime, 0);
-        }
-
-        if(Input.GetKey("down") || Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(0, -walkSpeed * Time.deltaTime, 0);
-        }
-
-        if (Input.GetKey("right") || Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(walkSpeed * Time.deltaTime, 0, 0);
-        }
-
-        if (Input.GetKey("left") || Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-walkSpeed * Time.deltaTime, 0, 0);
-        }
-
-        currPos = new Vector2(this.transform.position.x, this.transform.position.y);
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+        transform.position = transform.position + movement * Time.deltaTime;
     }
 }
