@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Input Settings")]
+    public int playerID = 0;
+    
+    [Space] [Header("Attributes")]
     public float walkSpeed;
-    public Rigidbody2D rb;
+    public Vector2 movementDirection;
 
-    private Vector2 currPos;
+    [Space] [Header("References")]
+    public Rigidbody2D rb;
 
     private void Awake()
     {
@@ -16,14 +21,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        ProcessInputs();
         Move();
+    }
+
+    void ProcessInputs()
+    {
+        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        movementDirection.Normalize();
     }
 
     void Move()
     {
-        //rb.velocity = new Vector2(currPos.x, currPos.y);
-
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
-        transform.position = transform.position + movement * Time.deltaTime;
+        rb.velocity = movementDirection * walkSpeed;
     }
 }
