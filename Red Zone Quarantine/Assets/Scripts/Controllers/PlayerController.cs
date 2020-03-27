@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Input Settings")]
     public int playerID = 0;
+    public bool stealth = false;
     
     [Space] [Header("Attributes")]
     public float walkSpeed;
@@ -29,10 +30,29 @@ public class PlayerController : MonoBehaviour
     {
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         movementDirection.Normalize();
+
+        if(Input.GetKeyUp(KeyCode.C))
+        {
+            stealth = !stealth;
+        }
     }
 
     void Move()
     {
-        rb.velocity = movementDirection * walkSpeed;
+        if(!stealth)
+        {
+            if(Input.GetKey(KeyCode.LeftShift))
+            {
+                rb.velocity = movementDirection * (walkSpeed * 2);
+            }
+            else
+            {
+                rb.velocity = movementDirection * walkSpeed;
+            }
+        }
+        else
+        {
+            rb.velocity = movementDirection * (walkSpeed / 2);
+        }
     }
 }

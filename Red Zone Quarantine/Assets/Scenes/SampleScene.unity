@@ -317,7 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce06e084c8313934797ba6d18e61879f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerID: 0
   walkSpeed: 1.5
+  movementDirection: {x: 0, y: 0}
   rb: {fileID: 0}
 --- !u!212 &1744541454
 SpriteRenderer:
@@ -404,7 +406,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1744541457
 BoxCollider2D:
   m_ObjectHideFlags: 0
