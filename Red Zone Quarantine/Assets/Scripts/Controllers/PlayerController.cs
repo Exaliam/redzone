@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public bool stealth = false;
     
     [Space] [Header("Attributes")]
-    public float walkSpeed;
+    public float speed;
     public Vector2 movementDirection;
 
     [Space] [Header("References")]
@@ -43,16 +43,16 @@ public class PlayerController : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.LeftShift))
             {
-                rb.velocity = movementDirection * (walkSpeed * 2);
+                rb.velocity = movementDirection * (speed * 2);
             }
             else
             {
-                rb.velocity = movementDirection * walkSpeed;
+                rb.velocity = movementDirection * speed;
             }
         }
         else
         {
-            rb.velocity = movementDirection * (walkSpeed / 2);
+            rb.velocity = movementDirection * (speed / 2);
         }
     }
 }
