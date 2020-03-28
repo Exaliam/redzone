@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseStudentClass : BaseCharacterClass
 {
-    public void StudentClass()
+    public BaseStudentClass()
     {
         CharacterClassName = "Student";
         CharacterClassDescription = "Young and fast";

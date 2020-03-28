@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseHypochondriacClass : BaseCharacterClass
 {
-    public void HypochondriacClass()
+    public BaseHypochondriacClass()
     {
         CharacterClassName = "Hypochondriac";
         CharacterClassDescription = "ETCIÙ";

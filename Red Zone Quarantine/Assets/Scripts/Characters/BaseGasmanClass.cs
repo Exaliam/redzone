@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseGasmanClass : BaseCharacterClass
 {
-    public void GasmanClass()
+    public BaseGasmanClass()
     {
         CharacterClassName = "Gasman";
         CharacterClassDescription = "Fire and Blood";

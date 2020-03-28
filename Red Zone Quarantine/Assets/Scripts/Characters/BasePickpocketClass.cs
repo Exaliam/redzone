@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasePickpocketClass : BaseCharacterClass
 {
-    public void PickpocketClass()
+    public BasePickpocketClass()
     {
         CharacterClassName = "Pickpocket";
         CharacterClassDescription = "You can't see me";

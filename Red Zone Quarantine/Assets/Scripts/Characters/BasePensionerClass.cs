@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasePensionerClass : BaseCharacterClass
 {
-    public void PensionerClass()
+    public BasePensionerClass()
     {
         CharacterClassName = "Pensioner";
         CharacterClassDescription = "Too old to understand";
